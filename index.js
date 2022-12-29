@@ -1,6 +1,8 @@
 
 var express = require('express')
 var ejs = require('ejs')
+var bodyParser = require('body-parser');
+
 
 var app = express();
 
@@ -12,6 +14,7 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.listen(3006);
+app.use(bodyParser.urlencoded({extended:true}));
 
 //local host 3006
 app.get('/',function(req,res){
